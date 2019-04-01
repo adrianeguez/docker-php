@@ -18,6 +18,7 @@ RUN apt-get update && \
 RUN LC_ALL=C.UTF-8 add-apt-repository ppa:ondrej/php
 RUN apt-get update
 RUN docker-php-ext-install soap
+RUN docker-php-ext-install pdo_mysql
 COPY . /usr/src/myapp
 WORKDIR /usr/src/myapp
 ENV DEBIAN_FRONTEND teletype
